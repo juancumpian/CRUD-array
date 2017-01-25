@@ -15,11 +15,11 @@ public class EjercicioCrudArray{
       id[i] = -1;
   }
 
-  id[0] = 1;
-  id[1] = 2;
-  id[2] = 3;
-  id[3] = 4;
-  id[4] = 5;
+  id[0] = 0;
+  id[1] = 1;
+  id[2] = 2;
+  id[3] = 3;
+  id[4] = 4;
   nombre[0] = "nombre0";
   nombre[1] = "nombre1";
   nombre[2] = "nombre2";
@@ -129,11 +129,44 @@ public class EjercicioCrudArray{
     }
   }
   private static void modificar(){
+    int idL;
+    String nombreL;
+    int precioL;
+    String fabricanteL;
 
-     
+    System.out.println("dime la id del producto que quieres modificar");
+    idL = teclado.nextInt();
+
+    teclado.nextLine();
+
+    for (int i = 0;i < id.length ;i++){
+      if(idL == i){
+        System.out.println("id-----nombre-----fabricante-----precio");
+        System.out.println(id[i]+"------"+nombre[i]+"----"+fabricante[i]+"--------"+precio[i]);
+
+        System.out.println("dime el nombre");
+        nombreL = teclado.nextLine();
+
+        System.out.println("dime el precio");
+        precioL = teclado.nextInt();
+
+        teclado.nextLine();
+
+        System.out.println("dime el fabricante");
+        fabricanteL = teclado.nextLine();
+
+
+        nombre[i] = nombreL;
+        fabricante[i] = fabricanteL;
+        precio[i] = precioL;
+
+      }
+    }
 
   }
   private static void borrar(){
+    int id;
+
 
   }
 
