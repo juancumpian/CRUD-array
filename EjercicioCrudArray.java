@@ -117,15 +117,18 @@ public class EjercicioCrudArray{
 
   }
   private static void listar(){
-
+  boolean encontrado = false;
     System.out.println("id-----nombre-----fabricante-----precio");
 
     for (int i = 0; i < id.length; i++) {
       if(id[i] != -1){
-
+        encontrado = true;
         System.out.println(id[i]+"------"+nombre[i]+"----"+fabricante[i]+"--------"+precio[i]);
 
       }
+    }
+    if(!encontrado){
+      System.out.println(" ese id no esta registrado");
     }
   }
   private static void modificar(){
@@ -133,6 +136,7 @@ public class EjercicioCrudArray{
     String nombreL;
     int precioL;
     String fabricanteL;
+    boolean encontrado = false;
 
     System.out.println("dime la id del producto que quieres modificar");
     idL = teclado.nextInt();
@@ -141,6 +145,7 @@ public class EjercicioCrudArray{
 
     for (int i = 0;i < id.length ;i++){
       if(idL == i){
+        encontrado = true;
         System.out.println("id-----nombre-----fabricante-----precio");
         System.out.println(id[i]+"------"+nombre[i]+"----"+fabricante[i]+"--------"+precio[i]);
 
@@ -163,10 +168,33 @@ public class EjercicioCrudArray{
       }
     }
 
+    if(!encontrado){
+      System.out.println(" ese id no esta registrado");
+    }
+
   }
   private static void borrar(){
-    int id;
+    int idL;
+    boolean encontrado = false;
 
+    System.out.println("dime la id del producto que quieres modificar");
+    idL = teclado.nextInt();
+
+    teclado.nextLine();
+
+    for (int i = 0;i < id.length ;i++){
+      if(idL == i){
+        encontrado = true;
+        id[i] = -1;
+        nombre[i] = "";
+        fabricante[i] = "";
+        precio[i] = 0;
+        System.out.println("El producto fue borrado con exito!");
+      }
+    }
+    if(!encontrado){
+      System.out.println(" ese id no esta registrado");
+    }
 
   }
 
